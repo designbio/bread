@@ -1,8 +1,22 @@
 $(document).ready(function() {
 
+  /* Today's Date */
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1;
+
+  var yyyy = today.getFullYear();
+  if(dd<10){
+      dd='0'+dd;
+  }
+  if(mm<10){
+      mm='0'+mm;
+  }
+  var today = dd+'/'+mm+'/'+yyyy;
+
   var chart = null;
 
-  // dummy data
+  /* Dummy Data */
   var hours = [1, 2, 3, 4, 5];
   var A = [12, 10, 3, 5, 2, 3];
   var B = [4, 1, 5, 6, 8, 15];
@@ -45,7 +59,15 @@ $(document).ready(function() {
         }]
       },
       options: {
-        responsive: false,
+        responsive: true,
+        layout: {
+          padding: {
+            left: 150,
+            right: 150,
+            top: 50,
+            bottom: 50
+          }
+        },
         scales: {
             yAxes: [{
                 ticks: {
@@ -57,7 +79,7 @@ $(document).ready(function() {
     });
 
     /*
-    // code to dynamically update?
+    // code to dynamically update
     $('#organism').change(function(){
       chart.data.datasets[0].data = [];
       chart.data.datasets[0].data = getData();
@@ -65,10 +87,23 @@ $(document).ready(function() {
     });
     */
 
+    $('#graph').css('display','block');
+
+    $('html,body').animate({
+      scrollTop: $('#graph').offset().top}, 'slow');
+
   });
 
   var $form = $('form#design-form'),
     url = 'https://script.google.com/macros/s/AKfycbzhEfnv_D_dfIr7fLRjOYaa-uwcPE1B226Nu-HVpkcIkKoyQlUI/exec'
+
+  /* Add Date to JSON */
+  var formData = $form.serializeArray();
+  var dateObj = {
+    name: 'date',
+    value: today
+  }
+  formData['3'] = dateObj;
 
   $('#save').on('click', function(e) {
     e.preventDefault();
@@ -76,7 +111,7 @@ $(document).ready(function() {
       url: url,
       method: 'GET',
       dataType: 'json',
-      data: $form.serialize(),
+      data: formData,
       success: function (response) {
         if (response) {
           alert('Recipe Saved!');
