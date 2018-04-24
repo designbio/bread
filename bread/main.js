@@ -14,6 +14,12 @@ $(document).ready(function() {
   }
   var today = dd+'/'+mm+'/'+yyyy;
 
+  $('.link').click(function() {
+    var href = $(this).attr('href');
+    $('html,body').animate({
+      scrollTop: $(href).offset().top}, 'slow');
+  })
+
   var chart = null;
 
   /* Dummy Data */
@@ -23,11 +29,11 @@ $(document).ready(function() {
   var C = [10, 12, 13, 9, 11, 3];
 
   function getData() {
-    if ($("input[name=organism][value=A]").is(":checked")) {
+    if ($("input[name=organism][value=Lactobacillus-acidophilus]").is(":checked")) {
       return A;
-    } else if ($("input[name=organism][value=B]").is(":checked")) {
+    } else if ($("input[name=organism][value=Lactobacillus-lactis]").is(":checked")) {
       return B;
-    } else if ($("input[name=organism][value=C]").is(":checked")) {
+    } else if ($("input[name=organism][value=C-Milleri]").is(":checked")) {
       return C;
     } else {
       return [];
@@ -53,7 +59,7 @@ $(document).ready(function() {
               'rgba(0, 0, 0, 0)'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)'
+                'rgba(255, 173, 91, 1)'
             ],
             borderWidth: 3
         }]
@@ -72,8 +78,21 @@ $(document).ready(function() {
             yAxes: [{
                 ticks: {
                     beginAtZero:true
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString:'pH'
                 }
-            }]
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString:'Time'
+                }
+            }],
         }
       }
     });
@@ -114,8 +133,14 @@ $(document).ready(function() {
       data: formData,
       success: function (response) {
         if (response) {
-          alert('Recipe Saved!');
-          window.location.replace('index.html');
+          setTimeout(function(){
+            $("#next").show();
+            $('html,body').animate({
+              scrollTop: $('#next').offset().top}, 'slow');
+          }, 1500);
+          $('#success').css('display','block');
+          $('html,body').animate({
+            scrollTop: $('#success').offset().top}, 'slow');
         }
       },
       failure: function (response) {

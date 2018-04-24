@@ -1,8 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
 
-@import url('https://fonts.googleapis.com/css?family=Cousine:400,700');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,700');
 @import url('https://fonts.googleapis.com/css?family=Song+Myung');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 
@@ -27,20 +25,16 @@ html, body {
   font-size: 18px;
 }
 
-#home {
-  background-color: #ffebc4;
+.header {
+  font-size: 90px;
 }
 
 #design {
-  background-color: #fff4e0;
+  /*background-color: #ffebc4;*/
 }
 
 #recipe {
-  background-color: #ffebc4;
-}
-
-#about {
-  background-color: white;
+  /*background-color: #ffebc4;*/
 }
 
 .button {
@@ -49,15 +43,24 @@ html, body {
   font-size: 14px;
 }
 
-#recipe-graph {
-  display: none;
-}
-
 #graph {
   display: none;
   padding-top: 5%;
   padding-bottom: 5%;
   text-align: center;
+}
+
+#success {
+  display: none;
+}
+
+#next {
+  display: none;
+}
+
+.icon {
+  width: 2.5%;
+  bottom: 0;
 }
 
 li {
