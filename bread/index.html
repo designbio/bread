@@ -16,39 +16,48 @@
 
   <body>
 
-    <div class="container-fluid h-100" id="home">
-        <div class="row h-100 justify-content-center align-items-center">
-          <h1 class="col-8 text-center serif"><strong>Bread Cultures</strong></h1>
-        </div>
-    </div>
-
-    <nav class="navbar sans fixed-top navbar-expand-sm navbar-light bg-beige">
+    <nav class="navbar sans fixed-top navbar-expand-lg navbar-light bg-beige">
       <div class="container">
         <a class="serif navbar-brand" href="#">Bread</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link active link" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#design">Design</a>
+            <a class="nav-link link" href="#design">Design</a>
           </li>
           <li class="nav-item">
-            <a class="nav-item nav-link" href="#recipe">Recipe</a>
+            <a class="nav-link link" href="#recipe">Recipe</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link link" href="#about">About</a>
           </li>
         </ul>
       </div>
+      </div>
     </nav>
+
+    <div class="container-fluid h-100" id="home">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="header serif">Bread</h1>
+            <p class="sans">Create your own bread culture.</p>
+            <a href="#design" class="link"><img class="icon" src="assets/arrow-down.svg"></a>
+          </div>
+        </div>
+    </div>
 
     <div class="container-fluid h-100" id="design">
         <div class="row h-100 justify-content-center align-items-center">
           <form class="col-12 text-center" id="design-form">
-            <h1 class="serif"><strong>Design</strong></h1></br></br>
+            <p class="sans">------</p>
+            <h1 class="serif">Design</h1>
+            <p class="sans">Define your criteria.</p>
+          </br></br>
 
                 <ul class="list-inline sans">
                   <li class="list-inline-item">
@@ -56,20 +65,20 @@
                   </li>
                   <li class="list-inline-item">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="organism" value="A" id="A" checked>
-                      <label class="form-check-label" for="A"> A </label>
+                      <input class="form-check-input" type="radio" name="organism" value="Lactobacillus-acidophilus" id="A" checked>
+                      <label class="form-check-label" for="A"> Lactobacillus acidophilus </label>
                     </div>
                   </li>
                   <li class="list-inline-item">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="organism" value="B" id="B">
-                      <label class="form-check-label" for="B"> B </label>
+                      <input class="form-check-input" type="radio" name="organism" value="Lactobacillus-lactis" id="B">
+                      <label class="form-check-label" for="B"> Lactobacillus lactis </label>
                     </div>
                   </li>
                   <li class="list-inline-item">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="organism" value="C" id="C">
-                      <label class="form-check-label" for="C"> C </label>
+                      <input class="form-check-input" type="radio" name="organism" value="C-Milleri" id="C">
+                      <label class="form-check-label" for="C"> C. Milleri </label>
                     </div>
                   </li>
                 </ul></br>
@@ -121,9 +130,11 @@
                     </div>
                   </li>
                 </ul>
-              </br></br>
-              <button href="#graph" type="button" class="sans btn-outline-dark button" id="generate">Generate Recipe!</button>
-
+              </br></br></br>
+              <p class="sans">
+                Generate Recipe</br>
+                <a href="#graph" id="generate"><img class="icon" src="assets/arrow-down.svg"></a>
+              </p>
             </form>
           </div>
         </div>
@@ -132,8 +143,30 @@
         <div class="row h-100 justify-content-center align-items-center">
           <div class="col-12">
             <canvas id="recipe-graph" width="600" height="300"></canvas>
-            <button type="button" class="sans btn-outline-dark button" id="save">Save Recipe!</button>
+            <p class="sans">
+              Send Recipe</br>
+              <a href="#success" id="save"><img class="icon" src="assets/arrow-down.svg"></a>
+            </p>
             </br></br>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid h-100" id="success">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="serif">Recipe Sent!</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid h-100" id="next">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-12 text-center">
+            <p class="sans">------</p>
+            <h1 class="serif">What happens next?</h1>
+            <p class="sans">Check out the recipe and about for more information.</p>
+            <a href="#recipe" class="link"><img class="icon" src="assets/arrow-down.svg"></a>
           </div>
         </div>
       </div>
@@ -141,16 +174,17 @@
       <div class="container-fluid h-100" id="recipe">
         <div class="row h-100 justify-content-center align-items-center">
           <div class="col-12 text-center">
-            <h1 class="serif"><strong>Recipe</strong></h1>
+            <p class="sans">------</p>
+            <h1 class="serif">Recipe</h1>
           </div>
         </div>
-
       </div>
 
       <div class="container-fluid h-100" id="about">
         <div class="row h-100 justify-content-center align-items-center">
           <div class="col-12 text-center">
-            <h1 class="serif"><strong>About</strong></h2>
+            <p class="sans">------</p>
+            <h1 class="serif">About</h2>
           </div>
         </div>
 
