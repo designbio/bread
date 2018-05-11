@@ -1,195 +1,247 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Bread Cultures</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script type="text/javascript" src="main.js"></script>
-  </head>
+<head>
+  <title>Bread Cultures</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script type="text/javascript" src="main.js"></script>
+</head>
 
-  <body>
+<body>
 
-    <nav class="navbar sans fixed-top navbar-expand-lg navbar-light bg-beige">
-      <div class="container">
-        <a class="serif navbar-brand" href="#">Bread</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- Nav Bar -->
+  <nav class="navbar sans fixed-top navbar-expand-lg navbar-light bg-beige">
+    <div class="container">
+      <a class="serif navbar-brand" href="#">Bread</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link active link" href="#home">Home</a>
+            <a class="nav-link link" href="#home">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link link" href="#design">Design</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link" href="#recipe">Recipe</a>
+            <a class="nav-link link" href="#recipe">Bake</a>
           </li>
           <li class="nav-item">
             <a class="nav-link link" href="#about">About</a>
           </li>
         </ul>
       </div>
-      </div>
-    </nav>
-
-    <div class="container-fluid h-100" id="home">
-        <div class="row h-100 justify-content-center align-items-center">
-          <div class="col-12 text-center">
-            <h1 class="header serif">Bread</h1>
-            <p class="sans">Create your own bread culture.</p>
-            <a href="#design" class="link"><img class="icon" src="assets/arrow-down.svg"></a>
-          </div>
-        </div>
     </div>
+  </nav>
 
-    <div class="container-fluid h-100" id="design">
-        <div class="row h-100 justify-content-center align-items-center">
-          <form class="col-12 text-center" id="design-form">
-            <p class="sans">------</p>
-            <h1 class="serif">Design</h1>
-            <p class="sans">Define your criteria.</p>
-          </br></br>
+  <!-- Home Section -->
+  <div class="container-fluid h-100" id="home">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-md-12 text-center">
+        <h1 class="header serif">Bread</h1>
+        <p class="sans">Grow your starter culture.</p>
+        <a href="#design" class="link"><button type="button" class="btn btn-light btn-alpha">Start Design</button></a>
+      </div>
+    </div>
+  </div>
 
+  <!-- Design Section -->
+  <div class="container-fluid h-100" id="design">
+    <div class="row h-100 justify-content-center align-items-center" id="parameters">
+      <form class="col-md-12 text-center" id="design-form">
+        <p class="sans">------</p>
+        <h1 class="serif design-h">Design</h1>
+        <p class="sans design-d">Choose your growth parameters to generate the expected growth curve.</p>
+        </br></br>
+
+        <div class="row">
+          <div class="col-md-12 col-change">
+
+            <!-- Organism and Media Row -->
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-3 text-left">
+                <p> Organism </p>
                 <ul class="list-inline sans">
-                  <li class="list-inline-item">
-                    <h2 class="features">Organism</h2>
-                  </li>
                   <li class="list-inline-item">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="organism" value="Lactobacillus-acidophilus" id="A" checked>
                       <label class="form-check-label" for="A"> Lactobacillus acidophilus </label>
                     </div>
-                  </li>
+                  </li></br>
                   <li class="list-inline-item">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="organism" value="Lactobacillus-lactis" id="B">
                       <label class="form-check-label" for="B"> Lactobacillus lactis </label>
                     </div>
-                  </li>
+                  </li></br>
                   <li class="list-inline-item">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="organism" value="C-Milleri" id="C">
                       <label class="form-check-label" for="C"> C. Milleri </label>
                     </div>
                   </li>
-                </ul></br>
-
+                </ul>
+              </div>
+              <div class="col-md-3 text-left">
+                <p>Media</p>
                 <ul class="list-inline sans">
                   <li class="list-inline-item">
-                    <h2 class="features">pH</h2>
-                  </li>
-                  <li class="list-inline-item">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="pH" value="low" id="low" checked>
-                      <label class="form-check-label" for="low"> LOW </label>
+                      <input class="form-check-input" type="radio" name="media" value="X" id="X" checked>
+                      <label class="form-check-label" for="X"> X </label>
                     </div>
-                  </li>
+                  </li></br>
                   <li class="list-inline-item">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="pH" value="medium" id="medium">
-                      <label class="form-check-label" for="medium"> MEDIUM </label>
+                      <input class="form-check-input" type="radio" name="media" value="Y" id="Y" disabled>
+                      <label class="form-check-label" for="Y"> Y </label>
                     </div>
-                  </li>
+                  </li></br>
                   <li class="list-inline-item">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="pH" value="high" id="high">
-                      <label class="form-check-label" for="high"> HIGH </label>
-                    </div>
-                  </li>
-                </ul></br>
-
-                <ul class="list-inline sans">
-                  <li class="list-inline-item">
-                    <h2 class="features">Temperature</h2>
-                  </li>
-                  <li class="list-inline-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="temperature" value="low" id="low" checked>
-                      <label class="form-check-label" for="low"> LOW </label>
-                    </div>
-                  </li>
-                  <li class="list-inline-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="temperature" value="medium" id="medium">
-                      <label class="form-check-label" for="medium"> MEDIUM </label>
-                    </div>
-                  </li>
-                  <li class="list-inline-item">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="temperature" value="high" id="high">
-                      <label class="form-check-label" for="high"> HIGH </label>
+                      <input class="form-check-input" type="radio" name="media" value="Z" id="Z" disabled>
+                      <label class="form-check-label" for="Z"> Z </label>
                     </div>
                   </li>
                 </ul>
-              </br></br></br>
-              <p class="sans">
-                Generate Recipe</br>
-                <a href="#graph" id="generate"><img class="icon" src="assets/arrow-down.svg"></a>
-              </p>
-            </form>
+              </div>
+            </div>
+
+            <!-- Temperature and pH Row -->
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-3 text-left">
+                <p> Temperature </p>
+                <ul class="list-inline sans">
+                  <li class="list-inline-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="temperature" value="low" id="low-t" checked>
+                      <label class="form-check-label" for="low"> Low </label>
+                    </div>
+                  </li></br>
+                  <li class="list-inline-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="temperature" value="medium" id="medium-t">
+                      <label class="form-check-label" for="medium"> Medium </label>
+                    </div>
+                  </li></br>
+                  <li class="list-inline-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="temperature" value="high" id="high-t">
+                      <label class="form-check-label" for="high"> High </label>
+                    </div>
+                  </li>
+                </ul></br>
+              </div>
+              <div class="col-md-3 text-left">
+                <p> pH </p>
+                <ul class="list-inline sans">
+                  <li class="list-inline-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="pH" value="low" id="low-p" checked>
+                      <label class="form-check-label" for="low"> Low </label>
+                    </div>
+                  </li></br>
+                  <li class="list-inline-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="pH" value="medium" id="medium-p">
+                      <label class="form-check-label" for="medium"> Medium </label>
+                    </div>
+                  </li></br>
+                  <li class="list-inline-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="pH" value="high" id="high-p">
+                      <label class="form-check-label" for="high"> High </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
+
+          <!-- Growth Curve -->
+          <div class="col-md-6" id="graph">
+            <div class="row h-100 justify-content-center align-items-center">
+              <div class="col-11 text-center">
+                <canvas id="recipe-graph" width="350" height="200"></canvas>
+              </div>
+              <div class="col-1"></div>
+            </div>
+          </div>
+
         </div>
 
-      <div class="container-fluid" id="graph">
-        <div class="row h-100 justify-content-center align-items-center">
-          <div class="col-12">
-            <canvas id="recipe-graph" width="600" height="300"></canvas>
+        <!-- Generate and Save Buttons -->
+        </br>
+        <div class="row">
+          <div class="col-md-12 text-center col-change">
             <p class="sans">
-              Send Recipe</br>
-              <a href="#success" id="save"><img class="icon" src="assets/arrow-down.svg"></a>
+              <a id="generate"><button type="button" class="btn btn-light btn-style">Generate Recipe</button></a>
             </p>
-            </br></br>
           </div>
-        </div>
-      </div>
-
-      <div class="container-fluid h-100" id="success">
-        <div class="row h-100 justify-content-center align-items-center">
-          <div class="col-12 text-center">
-            <h1 class="serif">Recipe Sent!</h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid h-100" id="next">
-        <div class="row h-100 justify-content-center align-items-center">
-          <div class="col-12 text-center">
-            <p class="sans">------</p>
-            <h1 class="serif">What happens next?</h1>
-            <p class="sans">Check out the recipe and about for more information.</p>
-            <a href="#recipe" class="link"><img class="icon" src="assets/arrow-down.svg"></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid h-100" id="recipe">
-        <div class="row h-100 justify-content-center align-items-center">
-          <div class="col-12 text-center">
-            <p class="sans">------</p>
-            <h1 class="serif">Recipe</h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid h-100" id="about">
-        <div class="row h-100 justify-content-center align-items-center">
-          <div class="col-12 text-center">
-            <p class="sans">------</p>
-            <h1 class="serif">About</h2>
+          <div class="col-md-12 text-center col-change">
+            <p class="sans" id="hide-btn">
+              <a href="#success" id="save"><button type="button" class="btn btn-light btn-style">Send Recipe</button></a>
+            </p>
           </div>
         </div>
 
-      </div>
+      </form>
+    </div>
+  </div>
 
-  </body>
+  <div class="container-fluid h-100" id="success">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="serif">Recipe Sent!</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid h-100" id="grow">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-12 text-center">
+        <p class="sans">------</p>
+        <h1 class="serif">Grow Your Culture</h1>
+        <p class="sans">Real time simulation from Biorealize.</p>
+        <img src="assets/microbio.png"/></br></br>
+        <p class="sans">
+          <a href="#recipe" class="link"><button type="button" class="btn btn-light btn-style">Make Your Bread</button></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid h-100" id="recipe">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-12 text-center">
+        <p class="sans">------</p>
+        <h1 class="serif">Make Your Bread</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid h-100" id="about">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-12 text-center">
+        <p class="sans">------</p>
+        <h1 class="serif">About</h2>
+      </div>
+    </div>
+  </div>
+
+</body>
 
 </html>
