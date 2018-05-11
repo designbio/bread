@@ -16,9 +16,11 @@ $(document).ready(function() {
 
   $('.link').click(function() {
     var href = $(this).attr('href');
+    $('.navbar').find('.active').removeClass('active');
     $('html,body').animate({
       scrollTop: $(href).offset().top}, 'slow');
-  })
+    $(this).addClass('active');
+  });
 
   var chart = null;
 
@@ -27,6 +29,27 @@ $(document).ready(function() {
   var A = [12, 10, 3, 5, 2, 3];
   var B = [4, 1, 5, 6, 8, 15];
   var C = [10, 12, 13, 9, 11, 3];
+
+  $('input[type=radio][name=organism]').change(function(){
+    if ($("input[name=organism][value=Lactobacillus-acidophilus]").is(":checked")) {
+      $("#X").prop('checked', true);
+      $("#X").attr('disabled', false);
+      $("#Y").attr('disabled', true);
+      $("#Z").attr('disabled', true);
+    }
+     else if ($("input[name=organism][value=Lactobacillus-lactis]").is(":checked")) {
+      $("#Y").prop('checked', true);
+      $("#Y").attr('disabled', false);
+      $("#X").attr('disabled', true);
+      $("#Z").attr('disabled', true);
+    }
+    else if ($("input[name=organism][value=C-Milleri]").is(":checked")) {
+      $("#Z").prop('checked', true);
+      $("#Z").attr('disabled', false);
+      $("#X").attr('disabled', true);
+      $("#Y").attr('disabled', true);
+    }
+  });
 
   function getData() {
     if ($("input[name=organism][value=Lactobacillus-acidophilus]").is(":checked")) {
@@ -59,7 +82,7 @@ $(document).ready(function() {
               'rgba(0, 0, 0, 0)'
             ],
             borderColor: [
-                'rgba(255, 173, 91, 1)'
+                'rgba(255, 204, 106, 1)'
             ],
             borderWidth: 3
         }]
@@ -68,10 +91,10 @@ $(document).ready(function() {
         responsive: true,
         layout: {
           padding: {
-            left: 150,
-            right: 150,
-            top: 50,
-            bottom: 50
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0
           }
         },
         scales: {
@@ -106,26 +129,29 @@ $(document).ready(function() {
     });
     */
 
+    $('.col-change').addClass('col-md-6');
+    $('.col-change').removeClass('col-md-12');
     $('#graph').css('display','block');
-
-    $('html,body').animate({
-      scrollTop: $('#graph').offset().top}, 'slow');
+    $('#hide-btn').css('display', 'block');
 
   });
 
-  var $form = $('form#design-form'),
-    url = 'https://script.google.com/macros/s/AKfycbzhEfnv_D_dfIr7fLRjOYaa-uwcPE1B226Nu-HVpkcIkKoyQlUI/exec'
-
-  /* Add Date to JSON */
-  var formData = $form.serializeArray();
-  var dateObj = {
-    name: 'date',
-    value: today
-  }
-  formData['3'] = dateObj;
 
   $('#save').on('click', function(e) {
+
     e.preventDefault();
+
+    var $form = $('form#design-form'),
+      url = 'https://script.google.com/macros/s/AKfycbzhEfnv_D_dfIr7fLRjOYaa-uwcPE1B226Nu-HVpkcIkKoyQlUI/exec'
+
+    var formData = $form.serializeArray();
+    /* Add Date to JSON */
+    var dateObj = {
+      name: 'date',
+      value: today
+    }
+    formData['4'] = dateObj;
+
     var jqxhr = $.ajax({
       url: url,
       method: 'GET',
@@ -134,9 +160,9 @@ $(document).ready(function() {
       success: function (response) {
         if (response) {
           setTimeout(function(){
-            $("#next").show();
+            $("#grow").show();
             $('html,body').animate({
-              scrollTop: $('#next').offset().top}, 'slow');
+              scrollTop: $('#grow').offset().top}, 'slow');
           }, 1500);
           $('#success').css('display','block');
           $('html,body').animate({

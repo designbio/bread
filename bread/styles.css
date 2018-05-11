@@ -10,59 +10,74 @@ html, body {
 
 .serif {
   font-family: 'Song Myung';
+  color: black;
 }
 
 .sans {
   font-family: 'Roboto';
   font-weight: 400;
-}
-
-.bg-beige {
-  background-color: white;
-}
-
-.features {
-  font-size: 18px;
+  color: black;
 }
 
 .header {
   font-size: 90px;
+
+}
+
+#home {
+  background-image: url('assets/dough-5.jpg');
 }
 
 #design {
-  /*background-color: #ffebc4;*/
+  /*background-color: #fbfaf0;*/
 }
 
 #recipe {
   /*background-color: #ffebc4;*/
 }
 
-.button {
-  padding-top: 0.25%;
-  padding-bottom: 0.25%;
-  font-size: 14px;
+#success {
+  /*background-color: #ffebc4;*/
+}
+
+.btn-style {
+  font-family: 'Roboto';
+  font-size: 15px ! important;
+  border: none ! important;
+}
+
+.btn-alpha {
+  font-family: 'Roboto';
+  font-size: 15px ! important;
+  background-color: rgb(255, 255, 255, 0.5) ! important;
+  border: none ! important;
+}
+.btn-alpha:hover {
+  background-color: rgb(255, 255, 255, 0.75) ! important;
+  border: none ! important;
 }
 
 #graph {
   display: none;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  text-align: center;
+}
+
+#hide-btn {
+  display: none;
 }
 
 #success {
   display: none;
 }
 
-#next {
+#grow {
   display: none;
 }
 
-.icon {
-  width: 2.5%;
-  bottom: 0;
+img {
+  width: 50%;
 }
 
-li {
-  padding-left: 2%;
+.icon {
+  width: 25px;
+  bottom: 0;
 }
