@@ -21,7 +21,6 @@ html, body {
 
 .header {
   font-size: 90px;
-
 }
 
 #home {
@@ -29,6 +28,7 @@ html, body {
 }
 
 #design {
+  padding-top: 5%;
   /*background-color: #fbfaf0;*/
 }
 
